@@ -1,0 +1,12 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/core" },
+    { "path": "packages/express" },
+    { "path": "packages/react" },
+    { "path": "packages/better-sqlite3" },
+    { "path": "packages/pg" },
+    { "path": "packages/mysql2" },
+    { "path": "examples/basic" }
+  ]
+}

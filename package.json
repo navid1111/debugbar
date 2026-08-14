@@ -1,0 +1,54 @@
+{
+  "name": "express-react-debugbar-workspace",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "npm@10.9.8",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "benchmark": "node benchmarks/middleware.mjs",
+    "docs:check": "tsc -p tsconfig.test.json",
+    "release:validate": "npm run build && node scripts/validate-packages.mjs",
+    "compatibility": "npm run build && node scripts/compatibility.mjs",
+    "compatibility:unsupported": "node scripts/verify-unsupported.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "typecheck": "tsc -b && tsc -p tsconfig.test.json",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:coverage": "vitest run --coverage",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.33.0",
+    "@playwright/test": "^1.62.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/express": "5.0.3",
+    "@types/node": "22.17.1",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@types/supertest": "6.0.3",
+    "@vitest/coverage-v8": "3.2.7",
+    "axios": "1.18.0",
+    "eslint": "9.33.0",
+    "jsdom": "^26.1.0",
+    "prettier": "3.6.2",
+    "supertest": "7.1.4",
+    "tsx": "^4.20.5",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.39.1",
+    "vite": "^7.3.6",
+    "vitest": "3.2.7",
+    "vitest-axe": "^0.1.0"
+  }
+}
