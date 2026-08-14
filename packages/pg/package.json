@@ -1,0 +1,32 @@
+{
+  "name": "@debugbar/pg",
+  "version": "0.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@debugbar/core": "0.0.0"
+  },
+  "peerDependencies": {
+    "pg": ">=8 <9"
+  },
+  "devDependencies": {
+    "@types/pg": "8.21.0"
+  }
+}
